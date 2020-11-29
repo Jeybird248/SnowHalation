@@ -1,22 +1,17 @@
 hide();
 penUp();
-Background();
-
 //draws the background
-drawBackground();
+Background();
+var colors = ["lightblue","darkblue","red", "white", "black", "lightyellow"];
+
+
 //draws 50 snowflakes 
-for (var i = 0; i < 50; i++) {
+for (var i = 0; i < 25; i++) {
   //uses random size and thickness
-  moveTo(randomNumber(0, 300),randomNumber(0, 450));
+  moveTo(randomNumber(0, 300),randomNumber(110, 450));
   snowflake(randomNumber(5, 10), randomNumber(3,7));
 }
 
-//function puts big dot that serves as background
-//function adapted from code.org preexisting c
-function drawBackground(){
-  penRGB(224, 255, 255);
-  dot(1000);
-}
 //snowflakes by Jehyeok Yeon (Tommy)
 function snowflake(size, thiccness) {
   for (var count = 0; count < 8; count++) {
@@ -24,15 +19,15 @@ function snowflake(size, thiccness) {
     penDown();
     //randomizes thickness
     penWidth(thiccness);
-    //sets pen color to light blue
-    penColor('lightblue');
+    //sets pen color to random color from list
+    penColor( colors[randomNumber(0,5)] );
     moveForward(size);
     turnRight(90);
     moveForward(size/2);
     turnRight(90);
     //draws big corner
-    //sets pen color to dark blue
-    penColor('darkblue');
+    //sets pen color to random color from list
+    penColor(colors[randomNumber(0,5)]);
     moveForward(size/2);
     turnRight(90);
     moveForward(size);
@@ -59,11 +54,13 @@ function Background(){
 }
 //This calls the Cloud function, which will essentially ensure that the clouds will appear.
 function drawAllClouds(size){
+  for (var i = 0; i < 4; i++) {
     drawCloud(randomNumber(size));
+  }
 }
 //This makes sure that the cloud's position is randomized. 
 function drawCloud(size){
-  moveTo(randomNumber(25,200), randomNumber(25,200));
+  moveTo(randomNumber(25,200), randomNumber(25,100));
   penRGB(255,255,255,1);
   dot(size);
   //This will give the cloud its shape
