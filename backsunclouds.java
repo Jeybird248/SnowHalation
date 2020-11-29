@@ -20,7 +20,7 @@ function Background(){
 }
 //This calls the Cloud function, which will essentially ensure that the clouds will appear.
 function drawAllClouds(size){
-    drawCloud(randomNumber(size, size));
+    drawCloud(randomNumber(size));
 }
 //This makes sure that the cloud's position is randomized. 
 function drawCloud(size){
@@ -37,4 +37,3 @@ function drawCloud(size){
     dot(size);
   }
 }
-
