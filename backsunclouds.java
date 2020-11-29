@@ -10,15 +10,13 @@ function Background(){
   penUp();
   drawAllClouds(20, 20);
   //This part is for the Sun.
-  moveTo(280, 40);
   penColor("yellow");
+   moveTo(280, 40);
   dot(30);
   penUp();
   moveTo(0, 360);
   turnRight(90);
-  penWidth(250);
-  penColor("lightblue");
-  moveForward(350);
+  penWidth(200);
 }
 //This calls the Cloud function, which will essentially ensure that the clouds will appear.
 function drawAllClouds(size){
@@ -39,3 +37,4 @@ function drawCloud(size){
     dot(size);
   }
 }
+
