@@ -3,7 +3,7 @@ penUp();
 //draws the background
 Background();
 var colors = ["lightblue","darkblue","red", "white", "black", "lightyellow"];
-drawAllSnowmen();
+drawAllSnowpile();
 drawAllTree();
 //draws 50 snowflakes 
 for (var i = 0; i < 25; i++) {
@@ -80,13 +80,15 @@ function drawAllTree() {
     drawTree(randomNumber(50, 230));
   }
 }
-function drawAllSnowmen() {
-  for (var i = 0; i < 4; i++) {
+function drawAllSnowpile() {
+  //uses the snowpile function and a loop
+  for (var i = 0; i < 25; i++) {
     moveTo(randomNumber(0, 310), 445);
-    drawSnowman(randomNumber(10, 50));
+    drawSnowpile(randomNumber(10, 50));
   }
 }
 function drawTree(size) {
+  //sets tree color and brush sizes
   penColor(rgb(0,128,0));
   penDown();
   penWidth(25);
@@ -110,24 +112,12 @@ function drawTree(size) {
   penUp();
   
 }
-function drawSnowman(size) {
+function drawSnowpile(size) {
   //snow balls
   penDown();
   penWidth(5);
   penColor(rgb(255, 255, 255));
   dot(size);
-  moveForward(size);
-  dot(size);
-  moveForward(size);
-  dot(size);
-  moveForward(size);
-  penColor(rgb(255, 165, 0));
-  turnRight(120);
-  moveForward(size);
-  turnRight(120);
-  moveForward(size);
-  turnRight(120);
-  moveForward(size);
   penUp();
 
 }
