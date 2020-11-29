@@ -1,6 +1,4 @@
-start();
-function start(){
-  Background();
+Background();
 }
 
 //This will create the background, which will be both top and bottom.
